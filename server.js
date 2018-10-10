@@ -29,8 +29,8 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/nprMusic", { useNewUrlParser: true });
 
 //Handlebars set up
- // app.engine("handlebars", exphbs({ defaultLayout: "main"}));
- // app.set("view engine", "handlebars");
+  app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+  app.set("view engine", "handlebars");
 
 // A GET route for scraping the npr musite page
 app.get("/scrape", function(req, res) {
