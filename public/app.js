@@ -1,10 +1,8 @@
-// 
-
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
-    // For each one
+  
     for (var i = 0; i < data.length; i++) {
-      // Display the apropos information on the page
+      // Display the source to user
       $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
     }
   });
@@ -17,16 +15,16 @@ $.getJSON("/articles", function(data) {
     // Save the id from the p tag
     var thisId = $(this).attr("data-id");
   
-    // Now make an ajax call for the Article
+    // Ajax call for the Article
     $.ajax({
       method: "GET",
       url: "/articles/" + thisId
     })
-      // With that done, add the note information to the page
+      // Adding note information
       .then(function(data) {
         console.log(data);
         // The title of the article
-        $("#notes").append("<h1>" + data.title + "</h1>");
+        $("#notes").append("<h2>" + data.title + "</h2>");
         // An input to enter a new title
         $("#notes").append("<input id='titleinput' name='title' >");
         // A textarea to add a new note body
@@ -60,7 +58,7 @@ $.getJSON("/articles", function(data) {
         body: $("#bodyinput").val()
       }
     })
-      // With that done
+   
       .then(function(data) {
         // Log the response
         console.log(data);
@@ -72,3 +70,4 @@ $.getJSON("/articles", function(data) {
     $("#titleinput").val("");
     $("#bodyinput").val("");
   });
+  
