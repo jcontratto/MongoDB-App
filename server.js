@@ -42,11 +42,11 @@ app.set("view engine", "handlebars");
 
 //Scraping NBA news site
 app.get("/scrape", function (req, res) {
-    axios.get("https://www.nba.com/lakers/news/").then(function (response) {
+    axios.get("http://www.espn.com/nba/").then(function (response) {
 
         var $ = cheerio.load(response.data);
         // console.log('RESPONSE!!!!!!! ', $)
-        $("a.node_title related-content__link related-content__link--title").each(function (i, element) {
+        $("h1.contentItem__title contentItem__title--video").each(function (i, element) {
             var result = {};
 
             // console.log('I!!!!!!!!!!!!!! ', i)
