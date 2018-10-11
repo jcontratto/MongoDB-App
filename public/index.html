@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scraping NPR Music with Mongo</title>
+    <style>
+        body {
+         background-image: url('../images/npr_music_rgb.jpg'); 
+            background-repeat: no-repeat;
+            background-color: aquamarine;
+            font-family: 'Coiny', cursive, serif;
+            font-size: 16px;
+            background-size: cover;
+            color: black;
+        }
+
+        #wrapper {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 5%;
+        }
+
+        /* Articles section */
+
+        #articles {
+            display: inline-block;
+            overflow: auto;
+            width: 50%;
+            height: 600px;
+        }
+
+        /* Notes section */
+
+        #notes {
+            float: left;
+            width: 35%;
+        }
+
+        /* Text/Input area section */
+
+        textarea,
+        input {
+            display: block;
+            width: 100%;
+            background-color: turquoise;
+        }
+
+        /*Size for input entered */
+
+        input {
+            height: 36px;
+            font-size: 24px;
+        }
+
+        /* Area size for text entered */
+
+        textarea {
+            height: 200px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button type="button">
+            <a class="navbar-brand brand" href="/">SCRAPE NPR MUSIC</a>
+        </button>
+        <button type="submit" class="btn btn-default">Saved Articles</button>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <center>
+            <h1>NPR MUSIC</h1>
+        </center>
+
+        <div id="articles"></div>
+        <div id="notes"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

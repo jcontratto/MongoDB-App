@@ -17,6 +17,8 @@ var app = express();
 
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nprMusic";
+// Connect to the Mongo DB
+mongoose.connect("MONGODB_URI", { useNewUrlParser: true });
 //Logging requests through morgan
 app.use(logger("dev"));
 // Parse request body as JSON
@@ -25,8 +27,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/nprMusic", { useNewUrlParser: true });
+
 
 //Handlebars set up
   app.engine("handlebars", exphbs({ defaultLayout: "main"}));
