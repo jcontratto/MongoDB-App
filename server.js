@@ -1,3 +1,4 @@
+
 //Dependencies 
 var express = require("express");
 var logger = require("morgan");
@@ -10,15 +11,17 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3024;
+// var PORT = 3024;
+var PORT = process.env.PORT || 3024;
 
 // Initialize Express
 var app = express();
 
+/* TIM - Moved these down lower after express configuration */
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nprMusic";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nprMusic";
 // Connect to the Mongo DB
-mongoose.connect("MONGODB_URI", { useNewUrlParser: true });
+// mongoose.connect("MONGODB_URI", { useNewUrlParser: true });
 //Logging requests through morgan
 app.use(logger("dev"));
 // Parse request body as JSON
@@ -31,7 +34,16 @@ app.use(express.static("public"));
 
 //Handlebars set up
   app.engine("handlebars", exphbs({ defaultLayout: "main"}));
-  app.set("view engine", "handlebars");
+	app.set("view engine", "handlebars");
+	
+/* TIM - Use a variable so your application can run both locally and when deployed */
+
+	var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nprMusic";
+
+/* TIM - Pass variable into mongoose's connect method */
+
+	// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI);
 
 // A GET route for scraping the npr musite page
 app.get("/scrape", function(req, res) {
