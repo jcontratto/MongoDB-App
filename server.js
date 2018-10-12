@@ -30,11 +30,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-
-
 //Handlebars set up
-  app.engine("handlebars", exphbs({ defaultLayout: "main"}));
-	app.set("view engine", "handlebars");
+  // app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+	// app.set("view engine", "handlebars");
 	
 /* TIM - Use a variable so your application can run both locally and when deployed */
 

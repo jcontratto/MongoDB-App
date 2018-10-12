@@ -6,14 +6,19 @@
     <title>Scraping NPR Music with Mongo</title>
     <style>
         body {
-         /* background-image: url('.public/images/npr_music_rgb.jpg');  */
+            background-image: url('./assets/images/wild-sea.png');
             background-repeat: no-repeat;
-             background-color: aquamarine; 
+            background-size: cover;
+            /* background-color: aquamarine;   */
             font-family: 'Coiny', cursive, serif;
             font-size: 16px;
             background-size: cover;
             color: black;
         }
+
+        /* .nav {
+            background-color: black;
+        } */
 
         #wrapper {
             width: 960px;
@@ -29,12 +34,13 @@
             overflow: auto;
             width: 50%;
             height: 600px;
+            background-color: antiquewhite;
         }
 
         /* Notes section */
 
         #notes {
-            float: left;
+            float: right;
             width: 35%;
         }
 
@@ -64,11 +70,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <button type="button">
-            <a class="navbar-brand brand" href="/">SCRAPE NPR MUSIC</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">NPR MUSIC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <button type="submit" class="btn btn-default">Saved Articles</button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">SCRAPE NPR MUSIC</a>
+                </li>
+            </ul>
+
         </div>
     </nav>
 
@@ -80,6 +100,14 @@
         <div id="articles"></div>
         <div id="notes"></div>
     </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
