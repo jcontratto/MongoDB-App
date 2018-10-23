@@ -5,26 +5,57 @@
     <meta charset="UTF-8">
     <title>Scraping NPR Music with Mongo</title>
     <style>
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(0, 0, 0, .5);
+            float: left;
+            font-size: 28px;
+            font-family: 'Coiny', cursive, serif;
+        }
+
+        .navbar-light .navbar-brand {
+            color: rgba(0, 0, 0, .9);
+            font-size: 35px;
+            font-weight: 150px;
+        }
+
+        .navbar .bg-light {
+            background-color: orange;
+        }
+
         body {
             background-image: url('./assets/images/wild-sea.png');
             background-repeat: no-repeat;
             background-size: cover;
-            /* background-color: aquamarine;   */
             font-family: 'Coiny', cursive, serif;
-            font-size: 16px;
+            font-size: 30px;
             background-size: cover;
             color: black;
         }
 
-        /* .nav {
-            background-color: black;
-        } */
+        .h1,
+        h1 {
+            font-size: 80px;
+        }
+
+        .customCard {
+            box-shadow: 11px -10px 15px black;
+            cursor: pointer;
+            margin-top: 30px;
+            background-color: antiquewhite;
+            padding: 15px 15px;
+        }
+
+        .customLink {
+            word-break: break-word;
+        }
 
         #wrapper {
             width: 960px;
             margin-left: auto;
             margin-right: auto;
             padding-top: 5%;
+            font-family: 'Coiny', cursive, serif;
+            font-size: 18px;
         }
 
         /* Articles section */
@@ -32,16 +63,17 @@
         #articles {
             display: inline-block;
             overflow: auto;
-            width: 50%;
-            height: 600px;
-            background-color: antiquewhite;
+            width: 70%;
+            overflow-x: hidden;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         /* Notes section */
 
         #notes {
             float: right;
-            width: 35%;
+            width: 30%;
         }
 
         /* Text/Input area section */
@@ -71,11 +103,11 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">NPR MUSIC</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        <a class="navbar-brand" href="#">NPR MUSIC NEWS</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -87,24 +119,12 @@
         </div>
     </nav>
 
-    <!-- for(var i = 0; i < data.length; i ++) {
-
-    }
-    $("#aricles").append()
-    <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">NPR NEWS ARTICLE TITLE</h5>
-              <p class="card-text">Summary</p>
-              <a href="#" class="btn btn-primary">Notes</a>
-            </div>
-          </div> 
-          
-         STARTED TO TRY AND PUT ARTICLE DATA/OBJECTS IN CARDS TO MAKE IT LOOK NICER
-        -->
-
     <div id="wrapper">
         <center>
-            <h1>NPR MUSIC</h1>
+            <h1>NPR MUSIC NEWS</h1>
+            <h4>Click the article LINK to read article!</h4>
+            <h2>OR</h2>
+            <h3>Click the article to read/save customized notes!</h3>
         </center>
 
         <div id="articles"></div>
